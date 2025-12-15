@@ -1,0 +1,1 @@
+ALTER TABLE HD_Product ALTER COLUMN product_id RESTART WITH 4;
