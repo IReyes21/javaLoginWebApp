@@ -12,7 +12,7 @@ public class ProductDAO implements DAO<Product> {
     public Optional<Product> get(int id) {
         DB db = DB.getInstance();
         try {
-            String sql = "SELECT * FROM HD_Product WHERE product_id = ?";
+            String sql = "SELECT * FROM HD_PRODUCT WHERE product_id = ?";
             PreparedStatement stmt = db.getPreparedStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
@@ -40,7 +40,7 @@ public class ProductDAO implements DAO<Product> {
         DB db = DB.getInstance();
         List<Product> products = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM HD_Product ORDER BY product_id";
+            String sql = "SELECT * FROM HD_PRODUCT ORDER BY product_id";
             ResultSet rs = db.executeQuery(sql);
 
             while (rs.next()) {
@@ -69,8 +69,7 @@ public class ProductDAO implements DAO<Product> {
         }
 
         try {
-            // CORRECT: Remove product_id from INSERT
-            String sql = "INSERT INTO HD_Product(product_name, product_description, product_color, product_size, product_price) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO HD_PRODUCT(product_name, product_description, product_color, product_size, product_price) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement stmt = db.getPreparedStatement(sql);
 
             // Parameters now start at 1
@@ -94,7 +93,7 @@ public class ProductDAO implements DAO<Product> {
     public void update(Product product) {
         DB db = DB.getInstance();
         try {
-            String sql = "UPDATE HD_Product SET product_name=?, product_description=?, product_color=?, product_size=?, product_price=? WHERE product_id=?";
+            String sql = "UPDATE HD_PRODUCT SET product_name=?, product_description=?, product_color=?, product_size=?, product_price=? WHERE product_id=?";
             PreparedStatement stmt = db.getPreparedStatement(sql);
             stmt.setString(1, product.getProductName());
             stmt.setString(2, product.getProductDescription());
@@ -116,7 +115,7 @@ public class ProductDAO implements DAO<Product> {
     public void delete(Product product) {
         DB db = DB.getInstance();
         try {
-            String sql = "DELETE FROM HD_Product WHERE product_id=?";
+            String sql = "DELETE FROM HD_PRODUCT WHERE product_id=?";
             PreparedStatement stmt = db.getPreparedStatement(sql);
             stmt.setInt(1, product.getProductId());
 
@@ -134,7 +133,7 @@ public class ProductDAO implements DAO<Product> {
         DB db = DB.getInstance();
         List<String> headers = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM HD_Product WHERE product_id = -1";
+            String sql = "SELECT * FROM HD_PRODUCT WHERE product_id = -1";
             ResultSet rs = db.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
             int columnCount = rsmd.getColumnCount();

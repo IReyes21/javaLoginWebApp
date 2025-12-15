@@ -15,7 +15,7 @@
 <h2>Welcome, <%= session.getAttribute("user") %>!</h2>
 <p>You are now logged in.</p>
 
-<a href="${pageContext.request.contextPath}/product.jsp">View Sneaker Product</a>
+<a href="${pageContext.request.contextPath}/product_create.jsp"> Add new shoe product</a>
 <a href="logout">Logout</a>
 
 </body>
