@@ -9,13 +9,10 @@
   <strong>${product.productName}</strong>?
 </p>
 
-
-
 <form method="post" action="${pageContext.request.contextPath}/products/delete">
   <input type="hidden" name="id" value="${product.productId}" />
   <button type="submit">Yes, Delete</button>
 </form>
-
 
 <a href="${pageContext.request.contextPath}/products">Cancel</a>
 </body>

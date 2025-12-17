@@ -4,7 +4,6 @@
 <body>
 <h2>Create Product</h2>
 
-
 <form method="post"
       action="${pageContext.request.contextPath}/products/insert">
 
@@ -24,9 +23,8 @@
   <input type="number" step="0.01" name="price" required /><br><br>
 
   <button type="submit">Create</button>
+
 </form>
-
-
 <a href="${pageContext.request.contextPath}/products">Cancel</a>
 </body>
 </html>

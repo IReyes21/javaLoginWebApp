@@ -23,11 +23,8 @@
   Price:
   <input type="number" step="0.01" name="price" value="${product.productPrice}" />
 
-
-
   <button type="submit">Update</button>
 </form>
-
 
 <a href="${pageContext.request.contextPath}/products">Cancel</a>
 </body>
